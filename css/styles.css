@@ -116,16 +116,20 @@ header {
   text-decoration: none;
 
   position: relative;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link.current {
   color: var(--active-btn-color);
 }
+
 .nav li:not(:last-child),
 .contacts li:not(:last-child) {
   margin-right: 50px;
@@ -153,6 +157,10 @@ header {
   transform: scaleX(1);
 }
 
+.nav-link.current.nav-link::after {
+  transform: scaleX(1);
+}
+
 /* contacts */
 .contacts {
   display: flex;
@@ -177,11 +185,13 @@ header {
 .head-contacts:hover,
 .head-contacts:focus {
   color: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .head-contacts:hover .contact-icon,
 .head-contacts:focus .contact-icon {
   fill: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* БАННЕР */
@@ -408,6 +418,7 @@ header {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover .social-icon,
@@ -421,7 +432,7 @@ header {
 
 /* КЛИЕНТЫ */
 .company-list {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
 }
 
@@ -442,6 +453,7 @@ header {
 
 .company-icon {
   width: 106px;
+  height: 60px;
   fill: #afb1b8;
 }
 
@@ -453,6 +465,7 @@ header {
 .company:hover .company-icon,
 .company:focus .company-icon {
   fill: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ФУТЕР */
@@ -541,10 +554,74 @@ footer {
 .subscribe-link:hover,
 .subscribe-link:focus {
   background-color: var(--active-btn-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-item:not(:last-child) {
   margin-right: 10px;
+}
+
+/* input */
+
+.mail-form {
+  margin-left: 93px;
+}
+
+.mail-sub {
+}
+
+.mail-input {
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  background-color: var(--footer-color);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mail-form input::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+}
+
+.mail-sub-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+
+  width: 200px;
+  height: 50px;
+
+  cursor: pointer;
+  border-radius: 4px;
+  border: 0;
+
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+  background-color: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.mail-sub-btn::after {
+  content: '';
+
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+  background-size: contain;
+  background-image: url(../img/svg/icon-send.svg);
 }
 
 /* Модалка */
@@ -643,6 +720,7 @@ footer {
 
   height: 38px;
   min-width: 73px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:focus,
@@ -651,6 +729,7 @@ footer {
   color: var(--header-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Работы */
@@ -701,7 +780,6 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
 
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -732,8 +810,7 @@ footer {
   line-height: 28px;
   letter-spacing: 0.03em;
 
-  transform: translateY(100%);
-  opacity: 0;
+  transform: translateY(150%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
